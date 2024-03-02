@@ -1,0 +1,38 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  border: 2px solid #f3f3f3;
+  padding: 10px;
+}
+
+.todo__info {
+  display: flex;
+  align-items: center;
+}
+
+.todo__done {
+  text-decoration: line-through;
+}
+
+.todo__description {
+  word-wrap: break-word;
+  width: 16rem;
+}
+
+.checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 32px;
+}
