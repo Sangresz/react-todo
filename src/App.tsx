@@ -36,6 +36,15 @@ function App() {
     }));
   }
 
+  const updateTodo = (id: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTodos(prevTodos => prevTodos.map((todo, index) => {
+      if (index === id) {
+        return { ...todo, description: event.target.value };
+      }
+      return todo;
+    }));
+  }
+
   return (
     <div className='root'>
       <div className='main'>
@@ -53,8 +62,9 @@ function App() {
               id={index}
               description={todo.description}
               completed={todo.completed}
-              onDelete={deleteTodo}
+              deleteTodo={deleteTodo}
               toggleTodo={toggleTodo}
+              updateTodo={updateTodo}
             />
           )}
         </div>
