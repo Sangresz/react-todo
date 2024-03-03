@@ -4,7 +4,7 @@ import Todo from './Todo'
 
 interface todo {
   description: string,
-  isDone: boolean
+  completed: boolean
 }
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     const description = inputRef.current?.value;
     if (inputRef.current && description) {
       setTodos(prevTodos => [
-        { description, isDone: false },
+        { description, completed: false },
         ...prevTodos
       ]);
       inputRef.current.value = '';
@@ -30,7 +30,7 @@ function App() {
   const toggleTodo = (id: number) => {
     setTodos(prevTodos => prevTodos.map((todo, index) => {
       if (index === id) {
-        return { ...todo, isDone: !todo.isDone };
+        return { ...todo, completed: !todo.completed };
       }
       return todo;
     }));
@@ -52,7 +52,7 @@ function App() {
               key={index}
               id={index}
               description={todo.description}
-              isDone={todo.isDone}
+              completed={todo.completed}
               onDelete={deleteTodo}
               toggleTodo={toggleTodo}
             />
